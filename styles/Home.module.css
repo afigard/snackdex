@@ -1,12 +1,91 @@
 .container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+    padding: 20px;
+    background-color: whitesmoke;
+    min-height: 100vh;
+    overflow-y: auto;
 }
 
-.logo {
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.container h1 {
+    margin-bottom: 0px;
+}
+
+.container h3 {
+    margin-top: 0px;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+
+.brandFilterContainer {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.brandButton {
+    padding: 10px 20px;
+    background-color: lightblue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.brandButton:hover {
+    background-color: deepskyblue;
+}
+
+.inactiveButton {
+    opacity: 0.5;
+}
+
+.databaseTable {
+    width: 90%;
+    max-width: 2000px;
+    border-collapse: separate;
+    margin-top: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+
+.databaseTable th,
+.databaseTable td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.databaseTable th {
+    background-color: lightblue;
+}
+
+.databaseTable td {
+    background-color: white;
+}
+
+.sortableHeader {
+    cursor: pointer;
+    user-select: none;
+}
+
+.sortableHeader:hover {
+    background-color: deepskyblue;
+}
+
+.lowerFont {
+    font-weight: 300;
+}
+
+.biggerFont {
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .databaseTable {
+        width: 50%;
+    }
 }
