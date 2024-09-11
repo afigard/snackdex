@@ -112,150 +112,167 @@ export default function Home() {
         ))}
       </div>
 
-      <table className={styles.databaseTable}>
-        <thead>
-          <tr>
-            <th
-              onClick={() => handleSort("name")}
-              className={styles.sortableHeader}
-            >
-              Name{" "}
-              {sortColumn === "name" ? (sortOrder === "asc" ? "↑" : "↓") : "↓"}
-            </th>
-            <th
-              onClick={() => handleSort("brand")}
-              className={styles.sortableHeader}
-            >
-              Brand{" "}
-              {sortColumn === "brand" ? (sortOrder === "asc" ? "↑" : "↓") : "↓"}
-            </th>
-            <th
-              onClick={() => handleSort("calories")}
-              className={styles.sortableHeader}
-            >
-              Calories{" "}
-              {sortColumn === "calories"
-                ? sortOrder === "asc"
-                  ? "↑"
-                  : "↓"
-                : "↓"}
-            </th>
-            <th
-              onClick={() => handleSort("protein")}
-              className={styles.sortableHeader}
-            >
-              Protein{" "}
-              {sortColumn === "protein"
-                ? sortOrder === "asc"
-                  ? "↑"
-                  : "↓"
-                : "↓"}
-            </th>
-            <th
-              onClick={() => handleSort("carbs")}
-              className={styles.sortableHeader}
-            >
-              Carbs{" "}
-              {sortColumn === "carbs" ? (sortOrder === "asc" ? "↑" : "↓") : "↓"}
-            </th>
-            <th
-              onClick={() => handleSort("fat")}
-              className={styles.sortableHeader}
-            >
-              Fat{" "}
-              {sortColumn === "fat" ? (sortOrder === "asc" ? "↑" : "↓") : "↓"}
-            </th>
-            <th
-              onClick={() => handleSort("proteinCaloriesRatio")}
-              className={styles.sortableHeader}
-            >
-              Protein/Calories{" "}
-              {sortColumn === "proteinCaloriesRatio"
-                ? sortOrder === "asc"
-                  ? "↑"
-                  : "↓"
-                : "↓"}
-            </th>
-            <th
-              onClick={() => handleSort("proteinCarbsRatio")}
-              className={styles.sortableHeader}
-            >
-              Protein/Carbs{" "}
-              {sortColumn === "proteinCarbsRatio"
-                ? sortOrder === "asc"
-                  ? "↑"
-                  : "↓"
-                : "↓"}
-            </th>
-            <th
-              onClick={() => handleSort("proteinFatRatio")}
-              className={styles.sortableHeader}
-            >
-              Protein/Fat{" "}
-              {sortColumn === "proteinFatRatio"
-                ? sortOrder === "asc"
-                  ? "↑"
-                  : "↓"
-                : "↓"}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredItems.map((item) => (
-            <tr key={item.id}>
-              <td className={styles.biggerFont}>{item.name}</td>
-              <td>{item.brand}</td>
-              <td className={styles.biggerFont}>{item.calories}</td>
-              <td>
-                {item.protein}
-                <span className={styles.lowerFont}>g</span>
-              </td>
-              <td>
-                {item.carbs}
-                <span className={styles.lowerFont}>g</span>
-              </td>
-              <td>
-                {item.fat}
-                <span className={styles.lowerFont}>g</span>
-              </td>
-              <td
-                style={{
-                  color:
-                    item.calories !== 0 && item.protein / item.calories >= 0.075
-                      ? "green"
-                      : "red",
-                }}
+      <div className={styles.tableWrapper}>
+        <table className={styles.databaseTable}>
+          <thead>
+            <tr>
+              <th
+                onClick={() => handleSort("name")}
+                className={styles.sortableHeader}
               >
-                {item.calories !== 0
-                  ? (item.protein / item.calories).toFixed(3)
-                  : "N/A"}{" "}
-              </td>
-              <td
-                style={{
-                  color:
-                    item.carbs !== 0 && item.protein / item.carbs >= 1
-                      ? "green"
-                      : "red",
-                }}
+                Name{" "}
+                {sortColumn === "name"
+                  ? sortOrder === "asc"
+                    ? "↑"
+                    : "↓"
+                  : "↓"}
+              </th>
+              <th
+                onClick={() => handleSort("brand")}
+                className={styles.sortableHeader}
               >
-                {item.carbs !== 0
-                  ? (item.protein / item.carbs).toFixed(3)
-                  : "N/A"}{" "}
-              </td>
-              <td
-                style={{
-                  color:
-                    item.fat !== 0 && item.protein / item.fat >= 1
-                      ? "green"
-                      : "red",
-                }}
+                Brand{" "}
+                {sortColumn === "brand"
+                  ? sortOrder === "asc"
+                    ? "↑"
+                    : "↓"
+                  : "↓"}
+              </th>
+              <th
+                onClick={() => handleSort("calories")}
+                className={styles.sortableHeader}
               >
-                {item.fat !== 0 ? (item.protein / item.fat).toFixed(3) : "N/A"}{" "}
-              </td>
+                Calories{" "}
+                {sortColumn === "calories"
+                  ? sortOrder === "asc"
+                    ? "↑"
+                    : "↓"
+                  : "↓"}
+              </th>
+              <th
+                onClick={() => handleSort("protein")}
+                className={styles.sortableHeader}
+              >
+                Protein{" "}
+                {sortColumn === "protein"
+                  ? sortOrder === "asc"
+                    ? "↑"
+                    : "↓"
+                  : "↓"}
+              </th>
+              <th
+                onClick={() => handleSort("carbs")}
+                className={styles.sortableHeader}
+              >
+                Carbs{" "}
+                {sortColumn === "carbs"
+                  ? sortOrder === "asc"
+                    ? "↑"
+                    : "↓"
+                  : "↓"}
+              </th>
+              <th
+                onClick={() => handleSort("fat")}
+                className={styles.sortableHeader}
+              >
+                Fat{" "}
+                {sortColumn === "fat" ? (sortOrder === "asc" ? "↑" : "↓") : "↓"}
+              </th>
+              <th
+                onClick={() => handleSort("proteinCaloriesRatio")}
+                className={styles.sortableHeader}
+              >
+                Protein/Calories{" "}
+                {sortColumn === "proteinCaloriesRatio"
+                  ? sortOrder === "asc"
+                    ? "↑"
+                    : "↓"
+                  : "↓"}
+              </th>
+              <th
+                onClick={() => handleSort("proteinCarbsRatio")}
+                className={styles.sortableHeader}
+              >
+                Protein/Carbs{" "}
+                {sortColumn === "proteinCarbsRatio"
+                  ? sortOrder === "asc"
+                    ? "↑"
+                    : "↓"
+                  : "↓"}
+              </th>
+              <th
+                onClick={() => handleSort("proteinFatRatio")}
+                className={styles.sortableHeader}
+              >
+                Protein/Fat{" "}
+                {sortColumn === "proteinFatRatio"
+                  ? sortOrder === "asc"
+                    ? "↑"
+                    : "↓"
+                  : "↓"}
+              </th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {filteredItems.map((item) => (
+              <tr key={item.id}>
+                <td className={styles.biggerFont}>{item.name}</td>
+                <td>{item.brand}</td>
+                <td className={styles.biggerFont}>{item.calories}</td>
+                <td>
+                  {item.protein}
+                  <span className={styles.lowerFont}>g</span>
+                </td>
+                <td>
+                  {item.carbs}
+                  <span className={styles.lowerFont}>g</span>
+                </td>
+                <td>
+                  {item.fat}
+                  <span className={styles.lowerFont}>g</span>
+                </td>
+                <td
+                  style={{
+                    color:
+                      item.calories !== 0 &&
+                      item.protein / item.calories >= 0.075
+                        ? "green"
+                        : "red",
+                  }}
+                >
+                  {item.calories !== 0
+                    ? (item.protein / item.calories).toFixed(3)
+                    : "N/A"}
+                </td>
+                <td
+                  style={{
+                    color:
+                      item.carbs !== 0 && item.protein / item.carbs >= 1
+                        ? "green"
+                        : "red",
+                  }}
+                >
+                  {item.carbs !== 0
+                    ? (item.protein / item.carbs).toFixed(3)
+                    : "N/A"}
+                </td>
+                <td
+                  style={{
+                    color:
+                      item.fat !== 0 && item.protein / item.fat >= 1
+                        ? "green"
+                        : "red",
+                  }}
+                >
+                  {item.fat !== 0
+                    ? (item.protein / item.fat).toFixed(3)
+                    : "N/A"}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
