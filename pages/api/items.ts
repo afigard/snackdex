@@ -2,10 +2,10 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { Pool } from "pg";
 
 const pool = new Pool({
-  host: "localhost",
-  database: "postgres",
-  port: 5432,
-  user: "postgres",
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
