@@ -12,7 +12,9 @@
 
 <h3>Screenshots</h3>
 
-<div style="display: flex; justify-content: center; gap: 100px">
-  <img height="300px" alt="Desktop preview" src="./public/desktop-preview.png" />
-  <img height="300px" alt="Mobile preview" src="./public/mobile-preview.png" />
-</div>
+<table>
+  <tr>
+    <td><img height="300px" alt="Desktop preview" src="./public/desktop-preview.png" /></td>
+    <td><img height="300px" alt="Mobile preview" src="./public/mobile-preview.png" /></td>
+  </tr>
+</table>
