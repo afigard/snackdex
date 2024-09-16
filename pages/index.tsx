@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 import { Lato } from "next/font/google";
+import Head from "next/head";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -95,7 +96,16 @@ export default function Home() {
 
   return (
     <div className={`${styles.container} ${lato.className}`}>
-      <h1>fast food +</h1>
+      <Head>
+        <title>Fast Food +</title>
+        <meta
+          name="description"
+          content="Track French fast food nutrition easily"
+        />
+        <link rel="icon" href="/favicon.png" />
+      </Head>
+
+      <h1>Fast Food +</h1>
       <h3>by adrien figard</h3>
 
       <div className={styles.brandFilterContainer}>
