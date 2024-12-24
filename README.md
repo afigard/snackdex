@@ -1,20 +1,15 @@
-<h1 align="center">Fast Food +</h1>
+# Fast Food +
 
-<p align="center">The #1 French fast food database</p>
+Fast Food + is a web application built with Next.js that serves as a comprehensive database for French fast food products. It features over 100 products from various brands, allowing users to sort and filter items based on different criteria.
 
-<h3>Features</h3>
+### Features
 
 - 100+ products
-- 5+ brands
+- The most popular fast food brands
 - Various sorting options
-- Custom ratios
 - Responsiveness
 
-<h3>Screenshots</h3>
+### Snapshots
 
-<table>
-  <tr>
-    <td><img height="300px" alt="Desktop preview" src="./public/desktop-preview.png" /></td>
-    <td><img height="300px" alt="Mobile preview" src="./public/mobile-preview.png" /></td>
-  </tr>
-</table>
+![Desktop preview](public/desktop-preview.png)
+![Mobile preview](public/mobile-preview.png)
