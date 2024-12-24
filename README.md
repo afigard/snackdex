@@ -11,5 +11,5 @@ Fast Food + is a simple web application built with Next.js that serves as a comp
 
 ### Snapshots
 
-![Desktop preview](public/desktop-preview.png)
-![Mobile preview](public/mobile-preview.png)
+![Desktop preview](public/ffp-snapshot-1.png)
+![Mobile preview](public/ffp-snapshot-2.png)
