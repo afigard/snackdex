@@ -26,7 +26,7 @@ export default function Home() {
 
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   const [sortColumn, setSortColumn] = useState<string>("name");
-  const [activeBrands, setActiveBrands] = useState<string[]>([]);
+  const [activeBrands, setActiveBrands] = useState<string[]>(["McDonald's"]);
 
   useEffect(() => {
     fetch("/api/items")
