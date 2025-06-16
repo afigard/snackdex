@@ -37,7 +37,7 @@
 
 .brandButton {
     padding: 10px 20px;
-    background-color: lightblue;
+    background-color: lightsalmon;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -45,7 +45,7 @@
 }
 
 .brandButton:hover {
-    background-color: deepskyblue;
+    background-color: salmon;
 }
 
 .inactiveButton {
@@ -70,7 +70,7 @@
 }
 
 .databaseTable th {
-    background-color: lightblue;
+    background-color: lightsalmon;
 }
 
 .databaseTable td {
@@ -84,7 +84,7 @@
 }
 
 .sortableHeader:hover {
-    background-color: deepskyblue;
+    background-color: salmon;
 }
 
 .lowerFont {
