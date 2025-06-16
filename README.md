@@ -1,6 +1,6 @@
-# **Fast Food +**
+# **Snackdex**
 
-Fast Food + is a simple web application built with Next.js that serves as a comprehensive database for French fast food products. It features over 100 products from various brands, allowing users to sort and filter items based on different criteria.
+Snackdex is a simple web application built with Next.js that serves as a comprehensive database for French fast food products. It features over 100 products from various brands, allowing users to sort and filter items based on different criteria.
 
 ## **Features**
 

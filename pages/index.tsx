@@ -31,7 +31,12 @@ export default function Home() {
   useEffect(() => {
     fetch("/api/items")
       .then((response) => response.json())
-      .then((data) => setItems(data));
+      .then((data) => {
+        const sortedByName = [...data].sort((a, b) =>
+          a.name.localeCompare(b.name)
+        );
+        setItems(sortedByName);
+      });
   }, []);
 
   const handleSort = (column: string) => {
@@ -97,7 +102,7 @@ export default function Home() {
   return (
     <div className={`${styles.container} ${lato.className}`}>
       <Head>
-        <title>Fast Food +</title>
+        <title>Snackdex</title>
         <meta
           name="description"
           content="Track French fast food nutrition easily"
@@ -105,8 +110,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <h1>Fast Food +</h1>
-      <h3>by adrien figard</h3>
+      <h1>Snackdex</h1>
+      <h3>by Adrien Figard</h3>
 
       <div className={styles.brandFilterContainer}>
         {["Burger King", "Carl's Jr.", "KFC", "McDonald's"].map((brand) => (
@@ -152,7 +157,7 @@ export default function Home() {
                 onClick={() => handleSort("calories")}
                 className={styles.sortableHeader}
               >
-                Calories{" "}
+                Calories (kcal){" "}
                 {sortColumn === "calories"
                   ? sortOrder === "asc"
                     ? "↑"
@@ -192,7 +197,7 @@ export default function Home() {
                 onClick={() => handleSort("proteinCaloriesRatio")}
                 className={styles.sortableHeader}
               >
-                Protein/Calories{" "}
+                Protein/Calories Ratio{" "}
                 {sortColumn === "proteinCaloriesRatio"
                   ? sortOrder === "asc"
                     ? "↑"
@@ -203,7 +208,7 @@ export default function Home() {
                 onClick={() => handleSort("proteinCarbsRatio")}
                 className={styles.sortableHeader}
               >
-                Protein/Carbs{" "}
+                Protein/Carbs Ratio{" "}
                 {sortColumn === "proteinCarbsRatio"
                   ? sortOrder === "asc"
                     ? "↑"
@@ -214,7 +219,7 @@ export default function Home() {
                 onClick={() => handleSort("proteinFatRatio")}
                 className={styles.sortableHeader}
               >
-                Protein/Fat{" "}
+                Protein/Fat Ratio{" "}
                 {sortColumn === "proteinFatRatio"
                   ? sortOrder === "asc"
                     ? "↑"
