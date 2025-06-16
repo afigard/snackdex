@@ -11,5 +11,5 @@ Snackdex is a simple web application built with Next.js that serves as a compreh
 
 ## **Snapshots**
 
-![Desktop preview](public/ffp-snapshot-1.png)
-![Mobile preview](public/ffp-snapshot-2.png)
+![Desktop preview](public/snapshot-desktop.png)
+![Mobile preview](public/snapshot-mobile.png)
